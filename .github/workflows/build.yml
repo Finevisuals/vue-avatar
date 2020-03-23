@@ -14,4 +14,4 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Build Test File
-      run: npm run test-build;
+      run: npx vue-cli-service build test/index.js --dest=test-dist
