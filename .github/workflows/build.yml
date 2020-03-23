@@ -24,9 +24,9 @@ jobs:
 
     - name: GitHub Pages Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@releases/v3
-        with:
-          ACCESS_TOKEN: ${{ secrets.PASSWORD }}
-          BRANCH: master
-          FOLDER: dist
-          REPOSITORY_NAME: finevisuals.github.io
-          TARGET_FOLDER: vue-avatar
+      with:
+        ACCESS_TOKEN: ${{ secrets.PASSWORD }}
+        BRANCH: master
+        FOLDER: dist
+        REPOSITORY_NAME: finevisuals.github.io
+        TARGET_FOLDER: vue-avatar
