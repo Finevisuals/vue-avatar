@@ -11,10 +11,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout 🛎️
+      uses: actions/checkout@v2
+      with:
+        persist-credentials: false
 
-    - name: Install Dependencies
+    - name: Install Dependencies 🔧
       run: npm install
 
-    - name: Build Test File
+    - name: Build Test File 🔧
       run: npx vue-cli-service build test/index.js --dest=test-dist
+
+    - name: GitHub Pages Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          ACCESS_TOKEN: ${{ secrets.PASSWORD }}
+          BRANCH: master
+          FOLDER: dist
+          REPOSITORY_NAME: finevisuals.github.io
+          TARGET_FOLDER: vue-avatar
