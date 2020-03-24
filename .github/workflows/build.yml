@@ -22,10 +22,10 @@ jobs:
     - name: Build Test File 🔧
       run: npx vue-cli-service build test/index.js --dest=dist-vue-avatar
 
-    - name: Deploy 🚀
-      uses: s0/git-publish-subdir-action@master
-      env:
-        REPO: git@github.com:Finevisuals/finevisuals.github.io.git
-        BRANCH: master
-        FOLDER: test-dist
-        SSH_PRIVATE_KEY: ${{ secrets.PASSWORD }}
+    - name: Push changes to pages 🚀
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.PASSWORD }}
+        directory: 'test-dist'
+        repository: git@github.com:Finevisuals/finevisuals.github.io.git
+
