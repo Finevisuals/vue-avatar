@@ -7,7 +7,7 @@ Important Note: The component is still under development and not yet meant for p
 
 ## Demo
 
-A demo can be found [here](https://vuevata.tippfehlr.de/)
+A demo can be found [here](http://finevisuals.github.io)
 
 ## Usage
 
