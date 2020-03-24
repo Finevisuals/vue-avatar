@@ -26,6 +26,6 @@ jobs:
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.PASSWORD }}
-        directory: 'test-dist'
+        directory: 'dist-vue-avatar'
         repository: git@github.com:Finevisuals/finevisuals.github.io.git
 
