@@ -20,13 +20,12 @@ jobs:
       run: npm install
 
     - name: Build Test File 🔧
-      run: npx vue-cli-service build test/index.js --dest=test-dist
+      run: npx vue-cli-service build test/index.js --dest=dist-vue-avatar
 
-    - name: GitHub Pages Deploy 🚀
-      uses: JamesIves/github-pages-deploy-action@releases/v3
-      with:
-        ACCESS_TOKEN: ${{ secrets.PASSWORD }}
+    - name: Deploy 🚀
+      uses: s0/git-publish-subdir-action@master
+      env:
+        REPO: git@github.com:Finevisuals/finevisuals.github.io.git
         BRANCH: master
-        FOLDER: dist
-        REPOSITORY_NAME: finevisuals.github.io
-        TARGET_FOLDER: vue-avatar
+        FOLDER: test-dist
+        SSH_PRIVATE_KEY: ${{ secrets.PASSWORD }}
