@@ -27,5 +27,5 @@ jobs:
       with:
         github_token: ${{ secrets.PASSWORD }}
         directory: 'dist-vue-avatar'
-        repository: git@github.com:Finevisuals/finevisuals.github.io.git
+        repository: https://github.com/Finevisuals/finevisuals.github.io.git
 
